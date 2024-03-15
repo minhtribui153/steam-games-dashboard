@@ -1,0 +1,8 @@
+tqdm
+pandas
+jupyter
+notebook
+streamlit
+watchdog
+plotly-express
+numpy
