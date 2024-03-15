@@ -74,18 +74,16 @@ def autofill_array(arr):
 
 grouped = df_selection.groupby(group_func)
 
-left_column, right_column = st.columns(2)
+left_column, middle_column, right_column = st.columns(3)
 with left_column:
     st.markdown("##### Average Price of Games:")
     st.markdown(f"US `${(average_price if not math.isnan(average_price) else 0):.2f}`")
-with right_column:
+with middle_column:
     st.markdown("##### Average Cost per Concurrent User (CCU):")
     st.markdown(f"US `${(average_ccu if not math.isnan(average_price) else 0):.2f}`")
-    
-#df.groupby(group_func)["Median Playtime"].apply(lambda group: group.nlargest(1).index.tolist()[0]).nlargest(3).index.tolist()
-# st.markdown("##### Dominant Tag (Category):")
-# st.markdown(f"`{grouped[['Median Owners']].sum().idxmax()['Median Owners']}`")
-# st.markdown(f)
+with right_column:
+    st.markdown("##### Dominant Tag (Category):")
+    st.markdown(f"`{grouped[['Median Owners']].sum().idxmax()['Median Owners']}`")
 
 st.table(pd.DataFrame({
     "Rank": ["1", "2", "3"],
