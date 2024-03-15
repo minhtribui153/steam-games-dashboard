@@ -12,7 +12,7 @@ CSV_HEADERS = ["AppID", "Name", "Tag", "Developers", "Publishers",
                "CCU", "Price", "Initial Price", "Discount"
 ]
 TAGS_TO_REQUEST = all_tags
-FILE = "more_games.csv"
+FILE = "games.csv"
 
 
 def request(tag: str=None) -> object:

@@ -7,7 +7,7 @@ import ast
 
 
 
-df = pd.read_csv("more_games2.csv")
+df = pd.read_csv("games.csv")
 df["Tag"] = df["Tag"].apply(lambda tags: ast.literal_eval(tags.replace('"', '')))
 df["Developers"] = df["Developers"].apply(lambda developers: ast.literal_eval(developers.replace('"', '')))
 df["Publishers"] = df["Publishers"].apply(lambda publishers: ast.literal_eval(publishers.replace('"', '')))

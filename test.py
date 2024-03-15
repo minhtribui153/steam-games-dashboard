@@ -1,7 +1,9 @@
+# NOTE: This is a random test file, which is not necessary
+# You can delete it if you want
 import pandas as pd
 import ast
 
-df = pd.read_csv("more_games2.csv")
+df = pd.read_csv("games.csv")
 
 df["Tag"] = df["Tag"].apply(lambda tags: ast.literal_eval(tags))
 
@@ -33,6 +35,6 @@ def group_func(x):
 print(df)
 df_selection = df[df['Tag'].apply(lambda _tags: any(tag in _tags for tag in available_tags))]
 #grouped = df_selection.groupby(group_func)
-top_indices = df.groupby(group_func)["Median Playtime"].apply(lambda group: group.nlargest(1).index.tolist()[0]).nlargest(3).index.tolist()
-print(top_indices)
+grouped = df.groupby(group_func)
+print(grouped["Median Playtime"].apply(lambda group: group.nlargest(1).index.tolist()[0]).nlargest(3).index.tolist())
 #print(available_tags)
