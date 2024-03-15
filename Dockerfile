@@ -17,8 +17,8 @@ COPY requirements.txt .
 COPY . .
 RUN pip3 install -r requirements.txt
 
-EXPOSE 80
+EXPOSE 8080
 
 HEALTHCHECK CMD curl --fail http://localhost:80/_stcore/health
 
-ENTRYPOINT ["streamlit", "run", "dashboard.py", "--server.port=80"]
+ENTRYPOINT ["streamlit", "run", "dashboard.py", "--server.port=8080"]
