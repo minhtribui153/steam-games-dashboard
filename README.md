@@ -7,7 +7,7 @@ We referenced the Steam web api to collect data from Steam.
 
 To run this, first clone the repository:
 ```bash
-git clone https://github.com/minhtribui153/steam-games-dashboard/tree/main
+git clone https://github.com/minhtribui153/steam-games-dashboard
 cd steam-games-dashboard
 ```
 
