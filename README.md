@@ -1,1 +1,1 @@
-# Hackathon Project: Steam Games API
+# Hackathon Project: Steam Games API Dashboard
