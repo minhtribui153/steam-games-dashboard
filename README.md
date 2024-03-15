@@ -38,4 +38,4 @@ If it does not, click the link in the output to direct yourself to the dashboard
 
 ## How to use this project
 This is a video demonstration to how it works like:
-[Video Demonstration]([./video/Steam-games-dashboard.mp4](https://drive.google.com/file/d/1ZP5qgtEkovpq4VKiFRJ5TEE55FoH7ZpP)https://drive.google.com/file/d/1ZP5qgtEkovpq4VKiFRJ5TEE55FoH7ZpP)
+[Video Demonstration](https://drive.google.com/file/d/1ZP5qgtEkovpq4VKiFRJ5TEE55FoH7ZpP)
