@@ -5,6 +5,11 @@ Our team of 3 created this project to determine which genre of games on Steam is
 
 We referenced the Steam Web API to collect data from Steam.
 
+### Requirements
+Python version 3.10.11 or above
+
+### Instructions
+
 To run this, first clone the repository:
 ```bash
 git clone https://github.com/minhtribui153/steam-games-dashboard
@@ -16,7 +21,7 @@ Then, install required packages:
 pip install -r requirements.txt
 ```
 
-Deploy dashboard:
+Finally, deploy the dashboard:
 ```bash
 streamlit run dashboard.py
 ```
