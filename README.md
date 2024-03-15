@@ -5,10 +5,17 @@ Our team of 3 created this project to determine which genre of games on Steam is
 
 We referenced the Steam Web API to collect data from Steam.
 
-### Requirements
+### Live Version
+
+https://steam-games-dashboard.streamlit.app/
+
+### Installation
+
+Requirements:
+
 Python version 3.10.11 or above
 
-### Instructions
+Instructions:
 
 To run this, first clone the repository:
 ```bash
