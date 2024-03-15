@@ -31,7 +31,8 @@ def group_func(x):
     return None
 # Use an index dictionary to test
 print(df)
-df_selection = df[df['Tag'].apply(lambda _tags: any(tag in _tags for tag in ["Racing", "Indie", "Adventure"]))]
-grouped = df_selection.groupby(group_func)
-print(grouped[["Median Playtime"]].sum().idxmax()["Median Playtime"])
+df_selection = df[df['Tag'].apply(lambda _tags: any(tag in _tags for tag in available_tags))]
+#grouped = df_selection.groupby(group_func)
+top_indices = df.groupby(group_func)["Median Playtime"].apply(lambda group: group.nlargest(1).index.tolist()[0]).nlargest(3).index.tolist()
+print(top_indices)
 #print(available_tags)

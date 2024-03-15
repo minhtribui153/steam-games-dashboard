@@ -66,19 +66,31 @@ def group_func(x):
         return data[indices[x]]
     return None
 
+def autofill_array(arr):
+    if len(arr) < 3:
+        missing_elements = 3 - len(arr)
+        arr.extend([None] * missing_elements)
+    return arr
+
 grouped = df_selection.groupby(group_func)
 
-left_column, middle_column, right_column = st.columns(3)
+left_column, right_column = st.columns(2)
 with left_column:
     st.markdown("##### Average Price of Games:")
     st.markdown(f"US `${(average_price if not math.isnan(average_price) else 0):.2f}`")
-with middle_column:
+with right_column:
     st.markdown("##### Average Cost per Concurrent User (CCU):")
     st.markdown(f"US `${(average_ccu if not math.isnan(average_price) else 0):.2f}`")
-with right_column:
-    st.markdown("##### Dominant Tag (Category):")
-    st.markdown(f"`{grouped[['Median Owners']].sum().idxmax()['Median Owners']}`")
-st.markdown("---")
+    
+#df.groupby(group_func)["Median Playtime"].apply(lambda group: group.nlargest(1).index.tolist()[0]).nlargest(3).index.tolist()
+# st.markdown("##### Dominant Tag (Category):")
+# st.markdown(f"`{grouped[['Median Owners']].sum().idxmax()['Median Owners']}`")
+# st.markdown(f)
+
+st.table(pd.DataFrame({
+    "Rank": ["1", "2", "3"],
+    "Category (Tag)": autofill_array(grouped["Median Playtime"].apply(lambda group: group.nlargest(1).index.tolist()[0]).nlargest(3).index.tolist())
+}))
 # Graph - Distribution for Median Playtime
 median_playtime_grouped = grouped.sum()[["Median Playtime"]].sort_values(by="Median Playtime")
 median_playtime_fig = px.bar(
